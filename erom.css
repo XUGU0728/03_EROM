@@ -29,25 +29,6 @@
 /* 여기부터 섹션01(메인이미지슬라이드)-------------------- */
     .mainSlideImgBox{width: 700%; display: flex; overflow-x: hidden; transition: all 0.5s linear;}
         .mainSlideImgBox > div {width: calc(100% / 7); flex-shrink: 0;}
-        .btnBox{position: relative; width: 180px; height: 70px; background-color: white; position: absolute; bottom: 26%; right: 20%;}
-        .prevBtn, .nextBtn{position: absolute; z-index: 10; cursor: pointer;}
-        .prevBtn{
-            left: 15%;
-            top: 40%;
-            transform: translateY(-50%);
-        }
-        .nextBtn{
-            right: 15%;
-            top: 40%;
-            transform: translateY(-50%);
-        }
-        .pageIndex{
-        position: absolute;
-        top: 29%;
-        left: 39%;
-        z-index: 1;
-        color: black;
-        }
         .inBox0101, .inBox0102, .inBox0103, .inBox0104, .inBox0105{height: 65vh; position: relative; object-fit: cover; background-position: center; background-repeat: no-repeat; background-size: cover;}
         .inBox0101{background-image: url('image/visual01.png');}
         .inBox0102{background-image: url('image/visual02.png');}
@@ -64,6 +45,13 @@
                 .textBox0103{color: white; font-size: 32px; top: 30%; left:20%}
                 .textBox0104{color: white; top: 52%; left:20%; font-weight: 400;}
                 .btn0101{top: 65%; left:21%; color: white; padding: 7px 30px; border-radius: 25px; background: linear-gradient(90deg, #01534d, #189e8a);}
+        .btnBox{position: relative; width: 180px; height: 70px; background-color: white; position: absolute; bottom: 26%; right: 20%;}
+        .prevBtn, .nextBtn{position: absolute; z-index: 10; cursor: pointer;}
+        .prevBtn{left: 15%; top: 40%; transform: translateY(-50%);}
+        .nextBtn{right: 15%; top: 40%; transform: translateY(-50%);}
+        .pageIndex{position: absolute; top: 29%; left: 39%; z-index: 1; color: black;}
+        .blackBar{position: absolute; bottom: 30%; left: 17%; height: 2px; width: 0px; background-color: black; z-index: 1; transition: all 0.1s linear}
+        .grayBar{position: absolute; bottom: 30%; left: 17%; height: 2px; width: 120px; background-color: #7777;}
 /* 여기부터 섹션02(스크롤이벤트_아이콘)-------------------- */
     .container02{width: 100%; height: 65vh; background-color: #fafafa; display: flex; justify-content: center; align-items: center; flex-direction: column;}
         .textBox0201{display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;}
@@ -128,7 +116,7 @@
         .textBox0501>div:nth-child(1){font-weight: 600; font-size: 24px; color: #666; position: absolute; z-index: 2;}
         .textBox0501>div:nth-child(2){font-weight: 600; font-size: 40px; position: absolute; top: 50%; margin: 20px 0;}
         .circle0501{position: absolute; top: 0%; left: -1%; background-color: #90bd20; border-radius: 50%; width: 20px; height: 20px; z-index: 1;}
-        .imgOutBox{width: 60%; height: auto; min-height: 400px; color: white; display: flex; justify-content: center; overflow: visible;}
+        .imgOutBox{perspective: 1000px; width: 60%; height: auto; min-height: 400px; color: white; display: flex; justify-content: center; overflow: visible;}
             .imgBox0501, .imgBox0502, .imgBox0503, .imgBox0504{cursor: pointer; transition: all 0.5s linear; position: relative; padding: 20px; background-position: center; background-repeat: no-repeat; background-size: cover;} 
             .imgBox0501{width: 25%; height: 400px; background-image: url(image/section04_img01.png);}
             .imgBox0502{width: 25%; height: 400px; background-image: url(image/section04_img02.png);}
@@ -138,7 +126,7 @@
             .imgBox0502:hover{transform: translateY(-50px); background-image: url(image/section04_img02_over.png);}
             .imgBox0503:hover{transform: translateY(-50px); background-image: url(image/section04_img03_over.png);}
             .imgBox0504:hover{transform: translateY(-50px); background-image: url(image/section04_img04_over.png);}
-                .imgBox0501>div:nth-child(1), .imgBox0502>div:nth-child(1), .imgBox0503>div:nth-child(1), .imgBox0504>div:nth-child(1){transform: rotate(-90deg); position: absolute; top: 15%; left: 0;}
+                .imgBox0501>div:nth-child(1), .imgBox0502>div:nth-child(1), .imgBox0503>div:nth-child(1), .imgBox0504>div:nth-child(1){transform: rotate(-90deg); transform-style: preserve-3d; position: absolute; top: 15%; left: 0;}
                 .imgBox0501>div:nth-child(2), .imgBox0502>div:nth-child(2), .imgBox0503>div:nth-child(2), .imgBox0504>div:nth-child(2){font-size: 36px; font-weight: bold; position: absolute; bottom: 10%;}
 /* 여기부터 푸터---------------------------------- */
     footer{width: 100%; height: 20vh; color: white; background-color: black; display: flex; flex-direction: column; justify-content: center; align-items: center;}

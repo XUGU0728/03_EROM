@@ -19,16 +19,10 @@ sideClose.addEventListener('click', () => {
     let pageIndex = document.querySelector('.pageIndex')
 
     let index = 1
+    let total = slides.length - 2
     let slideWidth = slides[0].offsetWidth
-    let autoSlideInterval
+    let autoSlideInterval =''
     slideBox.style.transform = `translateX(-${slideWidth * index}px)`
-
-    function updatePageIndex() {
-        let page = index
-        if (index === 0) page = slides.length - 2
-        if (index === slides.length - 1) page = 1
-        pageIndex.textContent = `0${page} / 0${slides.length - 2}`
-    }
 
     function moveSlide(i) {
         index = i
@@ -38,6 +32,17 @@ sideClose.addEventListener('click', () => {
 
     function nextSlide() { moveSlide(index + 1) }
     function prevSlide() { moveSlide(index - 1) }
+    function updatePageIndex() {
+        let page = index
+        if (index === 0) page = total
+        if (index === slides.length - 1) page = 1
+        pageIndex.textContent = `0${page} / 0${total}`
+
+        let blackBar = document.querySelector('.blackBar')
+        let maxBarWidth = 120
+        let progress = page / total
+        blackBar.style.width = `${maxBarWidth * progress}px`
+    }
 
     slideBox.addEventListener('transitionend', () => {
         if (index === slides.length - 1) {
@@ -171,25 +176,23 @@ sideClose.addEventListener('click', () => {
 
 //스크롤이벤트_어바웃
     window.addEventListener("scroll", function() {
-        let section = document.querySelector(".container05")
-        let imgBoxes = section.querySelectorAll(".imgOutBox > div")
-        let trigger = window.innerHeight * 0.8
-        let scrollY = window.scrollY
-        let sectionTop = section.offsetTop
+        let section = document.querySelector(".container05");
+        let imgBoxes = section.querySelectorAll(".imgOutBox > div");
+        let trigger = window.innerHeight * 0.6;
+        let scrollY = window.scrollY;
+        let sectionTop = section.offsetTop;
 
         imgBoxes.forEach((box, i) => {
-            let delay = i * 150
+            let delay = i * 200;
 
             if (scrollY + trigger > sectionTop) {
                 setTimeout(() => {
-                    box.style.transition = "transform 0.8s linear"
-                    box.style.transform = "rotateY(0deg)"
-                    box.style.opacity = "1"
-                }, delay)
+                    box.style.transform = "rotateY(0deg)";
+                    box.style.opacity = "1";
+                }, delay);
             } else {
-                box.style.transition = "transform 0.8s linear"
-                box.style.transform = "rotateY(90deg)"
-                box.style.opacity = "0"
+                box.style.transform = "rotateY(90deg)";
+                box.style.opacity = "0";
             }
-        })
-    })
+        });
+    });
