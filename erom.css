@@ -1,0 +1,148 @@
+    *{margin: 0; padding: 0; list-style: none; text-decoration: none;}
+    body{width: 100vw; overflow-x: hidden; font-size: 14px;}
+/* 여기부터 네비-------------------- */
+    nav{width: 100%; height: 80px; display: flex; justify-content: center; align-items: center; gap: 160px;}
+        .navTextBox, .navEmojiBox{display: flex; justify-content: center; align-items: center; cursor: pointer;}
+        .navTextBox{gap: 70px; position: relative;}
+        .navEmojiBox{gap: 30px;}
+/* 여기부터 서브메뉴-------------------- */
+            .submenu{transition: all 0.3s linear; font-size: 12px; color: #666; width: 120px; padding: 10px; z-index: 1; position: absolute; background-color: white; border-radius: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5); opacity: 0;}
+                .submenu li{margin: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;}
+            .navTextBox li:hover .submenu{opacity: 1;}
+            .sub01{position: absolute; left: -6%; top: 150%;}
+            .sub02{position: absolute; left: 12%; top: 150%;}
+            .sub03{position: absolute; left: 29%; top: 150%;}
+            .sub04{position: absolute; left: 47%; top: 150%;}
+            .sub05{position: absolute; left: 68%; top: 150%;}
+            .sub06{position: absolute; left: 87%; top: 150%;}
+/* 여기부터 햄버거메뉴-------------------- */
+        .containerSide{position: fixed; top: 0; z-index: 100; width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(45deg, #004f4f, #19A575); transform: translateY(-100%); transition: transform 0.3s linear;}
+.containerSide.activeS {transform: translateY(0);}
+        .sideBox{width: 70%; height: 90%; color:white; display: flex; flex-direction: column; gap: 160px;}
+                .logoBox{display: flex; position: relative;}
+                    .logoBox > div:nth-child(2){cursor: pointer; font-size: 60px; position: absolute; top: -5%; right: 0;}
+                .textBoxS{display: flex; justify-content: space-between;}
+                    .textBoxS > ul{font-weight: bold; font-size: 16px; line-height: 100px;}
+                    .textBoxS ul li{font-weight: lighter; font-size: 12px; line-height: 20px;}
+                .bottomBoxS{height: 60px; border-bottom:1px solid white; border-top:1px solid white; display: flex; align-items: center; gap: 50px;}
+            .sideBox > div:nth-child(4){font-size: 11px; color: #888;}
+/* 여기부터 섹션01(메인이미지슬라이드)-------------------- */
+    .mainSlideImgBox{width: 700%; display: flex; overflow-x: hidden; transition: all 0.5s linear;}
+        .mainSlideImgBox > div {width: calc(100% / 7); flex-shrink: 0;}
+        .btnBox{position: relative; width: 180px; height: 70px; background-color: white; position: absolute; bottom: 26%; right: 20%;}
+        .prevBtn, .nextBtn{position: absolute; z-index: 10; cursor: pointer;}
+        .prevBtn{
+            left: 15%;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+        .nextBtn{
+            right: 15%;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+        .pageIndex{
+        position: absolute;
+        top: 29%;
+        left: 39%;
+        z-index: 1;
+        color: black;
+        }
+        .inBox0101, .inBox0102, .inBox0103, .inBox0104, .inBox0105{height: 65vh; position: relative; object-fit: cover; background-position: center; background-repeat: no-repeat; background-size: cover;}
+        .inBox0101{background-image: url('./image/visual01.png');}
+        .inBox0102{background-image: url('./image/visual02.png');}
+        .inBox0103{background-image: url('./image/visual03.png');}
+        .inBox0104{background-image: url('./image/visual04.png');}
+        .inBox0105{background-image: url('./image/visual05.png');}
+            .slideTitle, .textBox0101, .textBox0102, .textBox0103, .textBox0104, .btn0101{position: absolute; z-index: 1; font-weight: 600;}
+                .slideTitle{display: flex; gap: 30px; top: 24%; left:17.5%}
+                .whiteText{color: white;}
+                .slideTitle>div:nth-child(2){background-color: #004f4a; color: white; padding: 3px 7px; border-radius: 3px;}
+                .greenText{color: #90bd20;}
+                .textBox0101{font-size: 32px; top: 30%; left:20%}
+                .textBox0102{top: 52%; left:20%; font-weight: 400;}
+                .textBox0103{color: white; font-size: 32px; top: 30%; left:20%}
+                .textBox0104{color: white; top: 52%; left:20%; font-weight: 400;}
+                .btn0101{top: 65%; left:21%; color: white; padding: 7px 30px; border-radius: 25px; background: linear-gradient(90deg, #01534d, #189e8a);}
+/* 여기부터 섹션02(스크롤이벤트_아이콘)-------------------- */
+    .container02{width: 100%; height: 65vh; background-color: #fafafa; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+        .textBox0201{display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;}
+            .textBox0201>div:nth-child(1){font-size: 32px; font-weight: 600; margin: 20px 0px; z-index: 2;}
+            .textBox0201>div:nth-child(3){font-weight: 600; margin: 10px 0px;}
+        .iconOutBox{display: flex;}
+        .iconBox{transition: all 0.8s linear; width: 200px; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: 600; color: #666666;}
+        .iconBox:nth-child(1) {opacity: 0; transform: translateX(-50px); } /* 왼쪽 */
+        .iconBox:nth-child(3) {opacity: 0;  transform: translateY(50px); }  /* 아래 */
+        .iconBox:nth-child(5) {opacity: 0;  transform: translateY(-50px); } /* 위 */
+        .iconBox:nth-child(7) {opacity: 0;  transform: translateY(50px); }  /* 아래 */
+        .iconBox:nth-child(9) {opacity: 0;  transform: translateX(50px); }  /* 오른쪽 */
+        .iconBox.active {opacity: 1; transform: translate(0,0);}
+        .line0201{width: 1px; height: 160px; background-color: #cfcfcf; margin-top: 20px;}
+        .circle0201{position: absolute; top: 15%; left: -1%; background-color: #90bd20; border-radius: 50%; width: 20px;height: 20px; z-index: 1;}
+/* 여기부터 섹션03(스크롤이벤트_제품)-------------------- */
+    .container03{width: 100%; height: 50vh; display: flex; justify-content: center; align-items: center;}
+        .prdBox0301, .prdBox0302{width: 35%; position: relative; display: flex; justify-content: center;}
+            .textBox0301 {opacity: 0;transform: translateX(-50px);}
+            .textBox0302 {opacity: 0; transform: translateX(50px);}
+            .textBox0301, .textBox0302{width: 300px; position: relative;}
+            .textBox0301 > div:nth-child(1), .textBox0302 > div:nth-child(1){font-size: 20px; font-weight: 600; color: #888;}
+            .textBox0301 > div:nth-child(2), .textBox0302 > div:nth-child(2){font-size: 40px; font-weight: 600; color: #004f4a;}
+            .textBox0301 > div:nth-child(4), .textBox0302 > div:nth-child(4){font-size: 12px;}
+            .textBox0301 > div:nth-child(3){position: absolute; top: 60%;}
+            .textBox0301 > div:nth-child(4){position: absolute; top: 100%;}
+            .textBox0301 > div:nth-child(5){position: absolute; top: 97%; left: 20%;}
+            .textBox0302 > div:nth-child(1){position: absolute; right: 0%; top: 13%;}
+            .textBox0302 > div:nth-child(2){position: absolute; right: 0%; top: 24%;}
+            .textBox0302 > div:nth-child(3){position: absolute; right: 0%; top: 58%;}
+            .textBox0302 > div:nth-child(4){position: absolute; right: 12%; top: 87%;}
+            .textBox0302 > div:nth-child(5){position: absolute; right: 0%; top: 85%;}
+            .imgBox0302 {opacity: 0; transform: scale(0.8);}
+        .line0301{width: 1px; height: 300px; background-color: #d6d6d6; z-index: 10; margin: 0 40px;}
+/* 여기부터 섹션04(스크롤이벤트_뉴스)-------------------- */
+    .container04{width: 100%; height: 60vh; background-color: #01534d; color: white; display: flex; justify-content: center; align-items: center;}
+        .newsBox0401{width: 30%; height: 60%; position: relative; font-weight: bold;}
+        .circle0401{position: absolute; top: 0%; left: -2%; background-color: #90bd20; border-radius: 50%; width: 20px; height: 20px; z-index: 1;}
+            .newsBox0401>div:nth-child(1){font-size: 28px; position: absolute; top: 0; z-index: 2;}
+            .newsBox0401>div:nth-child(2){font-size: 36px; position: absolute; top: 35%;}
+            .newsBox0401>div:nth-child(3){font-size: 11px; position: absolute; top: 75%; font-weight: lighter;}
+            .newsBox0401>div:nth-child(5){font-size: 36px; position: absolute; top: 70%; left: 12%;}
+        .newsBox0402{width: 30%; height: 75%; position: relative; font-weight: bold;}
+        .textBox0401>div:nth-child(1), .textBox0402>div:nth-child(1), .textBox0403>div:nth-child(1){font-size: 18px;}
+        .textBox0401>div:nth-child(3), .textBox0402>div:nth-child(3), .textBox0403>div:nth-child(3){font-size: 12px; margin: 30px 0; color: #888;}
+        .line0401 {height: 1px; width: 600px; background-color: #cfcfcf; margin: 20px 40px; margin-left: -10px; opacity: 0; transform: scaleX(0); transform-origin: right; transition: all 0.8s linear;}
+        .line0401.activeLine {opacity: 1; transform: scaleX(1);}
+        /* 플립 효과 (news01, news02) */
+        .newsBox0401 .news01, .newsBox0401 .news02 {opacity: 0; transform: rotateX(180deg); transition: all 0.8s linear;}
+        .newsBox0401 .news01.activeNews, .newsBox0401 .news02.activeNews {opacity: 1; transform: rotateX(0deg);}
+        /* 좌->우 슬라이드 (news03, svg) */
+        .newsBox0401 .news03, .newsBox0401 > div:nth-child(5) {opacity: 0; transform: translateX(-50px); transition: all 0.8s linear;}
+        .newsBox0401 .news03.activeNews2, .newsBox0401 > div:nth-child(5).activeNews2 {opacity: 1; transform: translateX(0);}
+        .textBox0401, .textBox0402, .textBox0403 {opacity: 0; transform: translateX(100px); transition: all 0.8s linear;}
+        .textBox0401{transition-delay: 0.3s;}
+        .textBox0402{transition-delay: 0.5s;}
+        .textBox0403{transition-delay: 0.7s;}
+        .textBox0401.active3, .textBox0402.active3, .textBox0403.active3 {opacity: 1; transform: translateX(0);}
+/* 여기부터 섹션05(스크롤이벤트_어바웃)-------------------- */
+    .container05{width: 100%; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+        .textBox0501{width: 60%; height: 20%; position: relative; margin-bottom: 50px;}
+        .textBox0501>div:nth-child(1){font-weight: 600; font-size: 24px; color: #666; position: absolute; z-index: 2;}
+        .textBox0501>div:nth-child(2){font-weight: 600; font-size: 40px; position: absolute; top: 50%; margin: 20px 0;}
+        .circle0501{position: absolute; top: 0%; left: -1%; background-color: #90bd20; border-radius: 50%; width: 20px; height: 20px; z-index: 1;}
+        .imgOutBox{width: 60%; height: auto; min-height: 400px; color: white; display: flex; justify-content: center; overflow: visible;}
+            .imgBox0501, .imgBox0502, .imgBox0503, .imgBox0504{cursor: pointer; transition: all 0.5s linear; position: relative; padding: 20px; background-position: center; background-repeat: no-repeat; background-size: cover;} 
+            .imgBox0501{width: 25%; height: 400px; background-image: url(./image/section04_img01.png);}
+            .imgBox0502{width: 25%; height: 400px; background-image: url(./image/section04_img02.png);}
+            .imgBox0503{width: 25%; height: 400px; background-image: url(./image/section04_img03.png);}
+            .imgBox0504{width: 25%; height: 400px; background-image: url(./image/section04_img04.png);}
+            .imgBox0501:hover{transform: translateY(-50px); background-image: url(./image/section04_img01_over.png);}
+            .imgBox0502:hover{transform: translateY(-50px); background-image: url(./image/section04_img02_over.png);}
+            .imgBox0503:hover{transform: translateY(-50px); background-image: url(./image/section04_img03_over.png);}
+            .imgBox0504:hover{transform: translateY(-50px); background-image: url(./image/section04_img04_over.png);}
+                .imgBox0501>div:nth-child(1), .imgBox0502>div:nth-child(1), .imgBox0503>div:nth-child(1), .imgBox0504>div:nth-child(1){transform: rotate(-90deg); position: absolute; top: 15%; left: 0;}
+                .imgBox0501>div:nth-child(2), .imgBox0502>div:nth-child(2), .imgBox0503>div:nth-child(2), .imgBox0504>div:nth-child(2){font-size: 36px; font-weight: bold; position: absolute; bottom: 10%;}
+/* 여기부터 푸터---------------------------------- */
+    footer{width: 100%; height: 20vh; color: white; background-color: black; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+        .topBox{width: 60%; height: 10%; display: flex; gap: 30px; position: relative; margin: 30px 0;}
+            .family{position: absolute; right: 0; padding: 5px; border-top: 1px solid #666; border-bottom: 1px solid white;}
+        .lineF{width: 60%; height: 1px; background-color: #666;}
+        .bottomBox{width: 60%; height: 10%; font-size: 10px; line-height: 20px; color: #666; margin: 30px 0;}
