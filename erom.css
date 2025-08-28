@@ -49,11 +49,11 @@
         color: black;
         }
         .inBox0101, .inBox0102, .inBox0103, .inBox0104, .inBox0105{height: 65vh; position: relative; object-fit: cover; background-position: center; background-repeat: no-repeat; background-size: cover;}
-        .inBox0101{background-image: url('./image/visual01.png');}
-        .inBox0102{background-image: url('./image/visual02.png');}
-        .inBox0103{background-image: url('./image/visual03.png');}
-        .inBox0104{background-image: url('./image/visual04.png');}
-        .inBox0105{background-image: url('./image/visual05.png');}
+        .inBox0101{background-image: url('image/visual01.png');}
+        .inBox0102{background-image: url('image/visual02.png');}
+        .inBox0103{background-image: url('image/visual03.png');}
+        .inBox0104{background-image: url('image/visual04.png');}
+        .inBox0105{background-image: url('image/visual05.png');}
             .slideTitle, .textBox0101, .textBox0102, .textBox0103, .textBox0104, .btn0101{position: absolute; z-index: 1; font-weight: 600;}
                 .slideTitle{display: flex; gap: 30px; top: 24%; left:17.5%}
                 .whiteText{color: white;}
@@ -130,14 +130,14 @@
         .circle0501{position: absolute; top: 0%; left: -1%; background-color: #90bd20; border-radius: 50%; width: 20px; height: 20px; z-index: 1;}
         .imgOutBox{width: 60%; height: auto; min-height: 400px; color: white; display: flex; justify-content: center; overflow: visible;}
             .imgBox0501, .imgBox0502, .imgBox0503, .imgBox0504{cursor: pointer; transition: all 0.5s linear; position: relative; padding: 20px; background-position: center; background-repeat: no-repeat; background-size: cover;} 
-            .imgBox0501{width: 25%; height: 400px; background-image: url(./image/section04_img01.png);}
-            .imgBox0502{width: 25%; height: 400px; background-image: url(./image/section04_img02.png);}
-            .imgBox0503{width: 25%; height: 400px; background-image: url(./image/section04_img03.png);}
-            .imgBox0504{width: 25%; height: 400px; background-image: url(./image/section04_img04.png);}
-            .imgBox0501:hover{transform: translateY(-50px); background-image: url(./image/section04_img01_over.png);}
-            .imgBox0502:hover{transform: translateY(-50px); background-image: url(./image/section04_img02_over.png);}
-            .imgBox0503:hover{transform: translateY(-50px); background-image: url(./image/section04_img03_over.png);}
-            .imgBox0504:hover{transform: translateY(-50px); background-image: url(./image/section04_img04_over.png);}
+            .imgBox0501{width: 25%; height: 400px; background-image: url(image/section04_img01.png);}
+            .imgBox0502{width: 25%; height: 400px; background-image: url(image/section04_img02.png);}
+            .imgBox0503{width: 25%; height: 400px; background-image: url(image/section04_img03.png);}
+            .imgBox0504{width: 25%; height: 400px; background-image: url(image/section04_img04.png);}
+            .imgBox0501:hover{transform: translateY(-50px); background-image: url(image/section04_img01_over.png);}
+            .imgBox0502:hover{transform: translateY(-50px); background-image: url(image/section04_img02_over.png);}
+            .imgBox0503:hover{transform: translateY(-50px); background-image: url(image/section04_img03_over.png);}
+            .imgBox0504:hover{transform: translateY(-50px); background-image: url(image/section04_img04_over.png);}
                 .imgBox0501>div:nth-child(1), .imgBox0502>div:nth-child(1), .imgBox0503>div:nth-child(1), .imgBox0504>div:nth-child(1){transform: rotate(-90deg); position: absolute; top: 15%; left: 0;}
                 .imgBox0501>div:nth-child(2), .imgBox0502>div:nth-child(2), .imgBox0503>div:nth-child(2), .imgBox0504>div:nth-child(2){font-size: 36px; font-weight: bold; position: absolute; bottom: 10%;}
 /* 여기부터 푸터---------------------------------- */
